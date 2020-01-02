@@ -18,10 +18,13 @@ Teste da Função MsgTimer().
 @return return, return_description
 /*/
 User Function fTestMsg()
-	Alert(U_MsgTimer(10, "Título", "Mensagem", MT_ISUCCES, MT_TDEFAULT))
-	Alert(U_MsgTimer(10, "Título", "Mensagem", MT_IALERT, MT_TNOYES))
-	Alert(U_MsgTimer(10, "Título", "Mensagem", MT_IERROR, MT_TDEFAULT))
-	Alert(U_MsgTimer(10, "Título", "Mensagem", MT_IINFO, MT_TYESNO))
+	// Alert(U_MsgTimer(10, "Título", "Mensagem", MT_ISUCCES, MT_TDEFAULT))
+	// Alert(U_MsgTimer(10, "Título", "Mensagem", MT_IALERT, MT_TNOYES))
+	// Alert(U_MsgTimer(10, "Título", "Mensagem", MT_IERROR, MT_TDEFAULT))
+	// Alert(U_MsgTimer(10, "Título", "Mensagem", MT_IINFO, MT_TYESNO))
+
+	U_MsgTimer(10, "Este " + Chr(13)+Chr(10) + " é " + Chr(13)+Chr(10) + " um " + Chr(13)+Chr(10) + "Texto Multiline", ;
+					"Este <br> é <br> um <br> Texto <br> Multiline", MT_IINFO, MT_TYESNO)
 Return
 
 /*/{Protheus.doc} MsgTimer
@@ -41,6 +44,7 @@ User Function MsgTimer(nSeconds, cTitulo, cMensagem, cIcone, nTipo)
 
 	Local xRet := Nil
 	Local cTimeIni := ""
+	Local nCountEnter := 0
 
 	Local oTFont := TFont():New('Arial Black',,-16,,.T.)
 	Local oTFont2 := TFont():New('Arial',,-12,,.F.)
@@ -68,9 +72,15 @@ User Function MsgTimer(nSeconds, cTitulo, cMensagem, cIcone, nTipo)
 	// ---------------------------------------------------------------------------------------------------------
 	nTextWidth := Int(GetTextWidth(0, cTitulo))
 	nHeightTit := ((IIF(nTextWidth <= 0, 200, nTextWidth) / 200) * 012) + 012
+	nCountEnter:= Len(Strtokarr2(cTitulo, Chr(13), .F.))
+	nCountEnter+= Len(Strtokarr2(cTitulo, "<br>", .F.))
+	nHeightTit += (nCountEnter * 012)
 
 	nTextWidth := Int(GetTextWidth(0, cMensagem))
 	nHeightMsg := ((IIF(nTextWidth <= 0, 200, nTextWidth) / 200) * 006) + 006
+	nCountEnter:= Len(Strtokarr2(cMensagem, Chr(13), .F.))
+	nCountEnter+= Len(Strtokarr2(cMensagem, "<br>", .F.))
+	nHeightMsg += (nCountEnter * 006)
 	// ---------------------------------------------------------------------------------------------------------
 
 	oModal  := FWDialogModal():New()
