@@ -72,8 +72,8 @@ User Function MsgTimer(nSeconds, cTitulo, cMensagem, cIcone, nTipo)
 	// ---------------------------------------------------------------------------------------------------------
 	nTextWidth := Int(GetTextWidth(0, cTitulo))
 	nHeightTit := ((IIF(nTextWidth <= 0, 200, nTextWidth) / 200) * 012) + 012
-	nCountEnter:= Len(Strtokarr2(cTitulo, Chr(13), .F.))
-	nCountEnter+= Len(Strtokarr2(cTitulo, "<br>", .F.))
+	nCountEnter:= Len(Strtokarr2(cTitulo, Chr(13), .F.)) -1
+	nCountEnter+= Len(Strtokarr2(cTitulo, "<br>", .F.)) -1
 	nHeightTit += (nCountEnter * 012)
 
 	nTextWidth := Int(GetTextWidth(0, cMensagem))
@@ -103,19 +103,19 @@ User Function MsgTimer(nSeconds, cTitulo, cMensagem, cIcone, nTipo)
 	Do Case
 		// Botão default ("Fechar")
 		Case nTipo == MT_TDEFAULT
-		oModal:addCloseButton(nil, "Fechar")
+			oModal:addCloseButton(nil, "Fechar")
 
 		// Botão "NÃO" e "SIM" (Focado no Não)
 		Case nTipo == MT_TNOYES
-		oModal:addNoYesButton()
+			oModal:addNoYesButton()
 
 		// Botão "SIM" e "NÃO" (Focado no Sim)
 		Case nTipo == MT_TYESNO
-		oModal:addYesNoButton()
+			oModal:addYesNoButton()
 
 		// Botão default ("Fechar")
 		Otherwise
-		oModal:addCloseButton(nil, "Fechar")
+			oModal:addCloseButton(nil, "Fechar")
 	EndCase
 	// ---------------------------------------------------------------------------------------------------------
 
