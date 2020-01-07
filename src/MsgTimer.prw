@@ -6,14 +6,14 @@
 #Define MT_TNOYES   2 // Adiciona os botões "Não" e "Sim", focando no "Não"
 
 // Definições de Ícones da mensagem
-#Define MT_ISUCCES  "FWSKIN_SUCCES_ICO" // Ícone Default Sucesso
-#Define MT_IALERT   "FWSKIN_ALERT_ICO"  // Ícone Default Alerta
-#Define MT_IERROR   "FWSKIN_ERROR_ICO"  // Ícone Default Erro
-#Define MT_IINFO    "FWSKIN_INFO_ICO"   // Ícone Default Informação
+#Define MT_ISUCCES  "FWSKIN_SUCCES_ICO.PNG" // Ícone Default Sucesso
+#Define MT_IALERT   "FWSKIN_ALERT_ICO.PNG"  // Ícone Default Alerta
+#Define MT_IERROR   "FWSKIN_ERROR_ICO.PNG"  // Ícone Default Erro
+#Define MT_IINFO    "FWSKIN_INFO_ICO.PNG"   // Ícone Default Informação
 
 /*/{Protheus.doc} fTestMsg
 Teste da Função MsgTimer().
-@author VAMILLY-Gabriel
+@author Gabriel Alencar
 @since 02/01/2020
 @return return, return_description
 /*/
@@ -29,7 +29,7 @@ Return
 
 /*/{Protheus.doc} MsgTimer
 Função para exibição de mensagens com Timer para fechamento automático.
-@author VAMILLY-Gabriel Alencar
+@author Gabriel Alencar
 @since 02/01/2020
 @return return, return_description
 @param nSeconds, numeric, Tempo em segundos que a mensagem será exibida antes de ser fechada.
