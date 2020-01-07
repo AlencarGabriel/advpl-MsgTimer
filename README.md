@@ -4,7 +4,7 @@ Função AdvPL de mensagens (Alert, Info, Stop, Success, YesNo e NoYes) com Time
 ## Finalidade
 Apresentar uma mensagem no formato padrão do Protheus 12, permitindo o fechamento automático caso o usuário não interaja com a mensagem, evitando sessões abertas por muito tempo desnecessariamente. 
 
-> **Importante!** Em casos de mensagem como `MsgNoYes` ou `MsgYesNo` o retorno default caso o tempo exceda será o botão focado **No** ou **Yes**. 
+> **Importante!** Em casos de mensagem como `MsgNoYes` ou `MsgYesNo` o retorno default caso o tempo exceda será o botão focado: **No** ou **Yes**. 
 
 ## Implementação
 Compilar o fonte MsgTimer no seu RPO e chamar via chamada de função de usuário `U_MsgTimer()`
@@ -15,7 +15,7 @@ Compilar o fonte MsgTimer no seu RPO e chamar via chamada de função de usuári
 ## [Reportar problemas ou sugerir melhorias](https://github.com/AlencarGabriel/advpl-MsgTimer/issues)
 
 ## Colaborar
-Assim como meu objetivo é ajudar aqueles que precisam, caso você faça uma melhoria ou encontre algum problema no projeto, fique a vontade para ajustar e me mandar seu [Pull Request](https://github.com/AlencarGabriel/advpl-MsgTimer/pulls), estarei avaliando e com certeza sendo útil estará disponível e farei uma dedicação.
+Assim como meu objetivo é ajudar aqueles que precisam, caso você faça uma melhoria ou encontre algum problema no projeto, fique a vontade para ajustar e me mandar seu [Pull Request](https://github.com/AlencarGabriel/advpl-MsgTimer/pulls), estarei avaliando e com certeza sendo útil estará disponível e farei uma agradecimento.
 
 ---
 
@@ -41,6 +41,10 @@ Ordem | Parâmetro | Tipo        | Opcional?  | Default     | Descrição
 
 > **Importante!** Uso de HTML no Título e/ou Mensagem pode ocasionar problemas de dimensionamento nas mensagens.
 
+> O parâmetro `cIcone` pode receber qualquer *resource* compilado no RPO.
+
+> É possível combinar qualquer ícone com qualquer tipo de mensagem.
+
 ### Definições:
 
 Definição   | Descrição   
@@ -52,3 +56,12 @@ Definição   | Descrição
 **MT_I**ALERT   | Ícone Default Alerta
 **MT_I**ERROR   | Ícone Default Erro
 **MT_I**INFO    | Ícone Default Informação
+
+## Exemplos de utilização:
+
+Exemplo | Code
+--------|-------------
+![MsgTimer Alert NoYes](Examples/MsgTimer_Alert_NoYes.png)          | U_MsgTimer(10, "Mensagem", "Título", MT_IALERT, MT_TNOYES)
+![MsgTimer Error Default](Examples/MsgTimer_Error_Default.png)      | U_MsgTimer(10, "Mensagem", "Título", MT_IERROR, MT_TDEFAULT)
+![MsgTimer Info YesNo](Examples/MsgTimer_Info_YesNo.png)            | U_MsgTimer(10, "Mensagem", "Título", MT_IINFO, MT_TYESNO)
+![MsgTimer Success Default](Examples/MsgTimer_Success_Default.png)  | U_MsgTimer(10, "Mensagem", "Título", MT_ISUCCES, MT_TDEFAULT)
