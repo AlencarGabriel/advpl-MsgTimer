@@ -43,8 +43,11 @@ Função para exibição de mensagens com Timer para fechamento automático.
 User Function MsgTimer(nSeconds, cMensagem, cTitulo, cIcone, nTipo)
 
 	Local xRet := Nil
-	Local cTimeIni := ""
 	Local nCountEnter := 0
+
+	Local cTipo := ""
+	Local cDesIcone := ""
+	Local cTimeIni := ""
 
 	Local oTFont := TFont():New('Arial Black',,-16,,.T.)
 	Local oTFont2 := TFont():New('Arial',,-12,,.F.)
@@ -57,6 +60,55 @@ User Function MsgTimer(nSeconds, cMensagem, cTitulo, cIcone, nTipo)
 	Default cIcone := MT_IINFO
 	Default cTitulo := ""
 	Default cMensagem := ""
+
+	// Caso esteja executando sem interface, não constroi os diálogos.
+	If IsBlind()
+
+		// Trata a descrição dos tipos de mensagem (botões)
+		Do Case
+			Case nTipo == MT_TDEFAULT
+				cTipo := "DEFAULT"
+			Case nTipo == MT_TNOYES
+				cTipo := "NOYES"
+			Case nTipo == MT_TYESNO
+				cTipo := "YESNO"
+		EndCase
+
+		// Trata a descrição dos ícones das mensagens
+		Do Case
+			Case cIcone == MT_ISUCCES
+				cDesIcone := "Success"
+			Case cIcone == MT_IALERT
+				cDesIcone := "Alert"
+			Case cIcone == MT_IERROR
+				cDesIcone := "Error"
+			Case cIcone == MT_IINFO
+				cDesIcone := "Info"
+		EndCase
+
+		// Mostra a mensagem no console
+		ConOut(DToC(Date()) + " - " + Time() + " - MsgTimer | " + cDesIcone + " | " + cTipo + " -> " + AllTrim(cMensagem))
+
+		// Trata os retornos em caso de modo Blind, para não deixar a Thread travada esperando uma resposta
+		Do Case
+			// Botão default ("Fechar")
+			Case nTipo == MT_TDEFAULT
+				Return Nil
+
+			// Botão "NÃO" e "SIM" (Focado no Não)
+			Case nTipo == MT_TNOYES
+				Return .F.
+
+			// Botão "SIM" e "NÃO" (Focado no Sim)
+			Case nTipo == MT_TYESNO
+				Return .T.
+
+			// Botão default ("Fechar")
+			Otherwise
+				Return Nil
+		EndCase
+
+	EndIf
 
 	// Só calcula e apresenta o contador caso os segundos tenham sido informados
 	If nSeconds > 0
