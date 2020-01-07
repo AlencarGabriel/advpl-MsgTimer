@@ -18,7 +18,7 @@ Compilar o fonte `MsgTimer.prw` no seu RPO e chamar via chamada de função de u
 > Caso deseje, o arquivo pode ser renomeado para `.tlpp`, o funcionamento será o mesmo porém no formato TL++.
 
 ## Futuras implementações
-- [ ] [Implementar Conout quando IsBlind](https://github.com/AlencarGabriel/advpl-MsgTimer/issues/1)
+- [x] [Implementar Conout quando IsBlind](https://github.com/AlencarGabriel/advpl-MsgTimer/issues/1)
 
 ## [Reportar problemas ou sugerir melhorias](https://github.com/AlencarGabriel/advpl-MsgTimer/issues)
 
