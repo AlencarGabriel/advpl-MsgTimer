@@ -72,3 +72,7 @@ Exemplo | Code
 - [x] Protheus 12 - Release 17
 - [x] Protheus 12 - Release 23
 - [x] Protheus 12 - Release 25
+
+## Comportamento em caso de execução sem interface `IsBlind()`
+
+![MsgTimer sem interface](Examples/Console_IsBlind.png)
