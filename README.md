@@ -49,13 +49,13 @@ Ordem | Parâmetro | Tipo        | Opcional?  | Default     | Descrição
 
 Definição   | Descrição   
 ------------|-----------
-**MT_T**DEFAULT | Adiciona somente o botão default "Fechar"           
-**MT_T**YESNO   | Adiciona os botões "Sim" e "Não", focando no "Sim"  
-**MT_T**NOYES   | Adiciona os botões "Não" e "Sim", focando no "Não"  
-**MT_I**SUCCES  | Ícone Default Sucesso
-**MT_I**ALERT   | Ícone Default Alerta
-**MT_I**ERROR   | Ícone Default Erro
-**MT_I**INFO    | Ícone Default Informação
+MT_TDEFAULT | Adiciona somente o botão default "Fechar"           
+MT_TYESNO   | Adiciona os botões "Sim" e "Não", focando no "Sim"  
+MT_TNOYES   | Adiciona os botões "Não" e "Sim", focando no "Não"  
+MT_ISUCCES  | Ícone Default Sucesso
+MT_IALERT   | Ícone Default Alerta
+MT_IERROR   | Ícone Default Erro
+MT_IINFO    | Ícone Default Informação
 
 ## Exemplos de utilização:
 
