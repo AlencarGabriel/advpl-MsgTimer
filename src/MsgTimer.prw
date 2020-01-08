@@ -11,22 +11,6 @@
 #Define MT_IERROR   "FWSKIN_ERROR_ICO.PNG"  // Ícone Default Erro
 #Define MT_IINFO    "FWSKIN_INFO_ICO.PNG"   // Ícone Default Informação
 
-/*/{Protheus.doc} fTestMsg
-Teste da Função MsgTimer().
-@author Gabriel Alencar
-@since 02/01/2020
-@return return, return_description
-/*/
-User Function fTestMsg()
-	// Alert(U_MsgTimer(10, "Mensagem", "Título", MT_ISUCCES, MT_TDEFAULT))
-	// Alert(U_MsgTimer(10, "Mensagem", "Título", MT_IALERT, MT_TNOYES))
-	// Alert(U_MsgTimer(10, "Mensagem", "Título", MT_IERROR, MT_TDEFAULT))
-	// Alert(U_MsgTimer(10, "Mensagem", "Título", MT_IINFO, MT_TYESNO))
-
-	U_MsgTimer(10, "Este " + Chr(13)+Chr(10) + " é " + Chr(13)+Chr(10) + " um " + Chr(13)+Chr(10) + "Texto Multiline", ;
-					"Este <br> é <br> um <br> Texto <br> Multiline", MT_IINFO, MT_TYESNO)
-Return
-
 /*/{Protheus.doc} MsgTimer
 Função para exibição de mensagens com Timer para fechamento automático.
 @author Gabriel Alencar
