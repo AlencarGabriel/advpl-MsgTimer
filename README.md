@@ -12,6 +12,8 @@ U_MsgTimer(10, "Mensagem", "Título", MT_ISUCCES, MT_TDEFAULT)
 ## Finalidade
 Apresentar uma mensagem no formato padrão do Protheus 12, permitindo o fechamento automático caso o usuário não interaja com a mensagem, evitando sessões abertas por muito tempo desnecessariamente. 
 
+> Saiba mais em meu blog: [https://gabrielalencar.dev/2020/01/07/MsgTimer-Advpl-Protheus](https://gabrielalencar.dev/2020/01/07/MsgTimer-Advpl-Protheus/)
+
 ## Implementação
 Compilar o fonte `MsgTimer.prw` no seu RPO e chamar via chamada de função de usuário `U_MsgTimer()`.
 
