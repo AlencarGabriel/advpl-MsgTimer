@@ -74,6 +74,7 @@ Exemplo | Code
 - [x] Protheus 12 - Release 17
 - [x] Protheus 12 - Release 23
 - [x] Protheus 12 - Release 25
+- [x] Protheus 12 - Release 27
 
 ## Comportamento em caso de execução sem interface `IsBlind()`
 
